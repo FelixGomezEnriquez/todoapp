@@ -1,6 +1,11 @@
 # Todoapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
+Realizado con Angular Material.
+
+User story: I can add a new task
+User story: I can complete a task
+User story: I can toggle between All, Active and Completed
+User story: I can remove one task under the Completed tab
 
 ## Development server
 
