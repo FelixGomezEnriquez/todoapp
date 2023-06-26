@@ -1,0 +1,30 @@
+.tab {
+  display: flex;
+  justify-content: center;
+}
+.tab-center {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: fit-content;
+}
+.task-bar {
+  display: flex;
+  gap: 15px;
+}
+.btn {
+  min-height: 55px;
+}
+
+.tasks-completed {
+  display: flex;
+  gap: 100px;
+  p {
+    font-size: 1.2em;
+  }
+  span {
+    color: red;
+    cursor: pointer;
+  }
+}

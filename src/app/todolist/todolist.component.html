@@ -1,0 +1,69 @@
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab label="All">
+    <div class="tab">
+      <div class="tab-center">
+        <div class="task-bar">
+          <mat-form-field>
+            <mat-label>Task</mat-label>
+            <input matInput #input placeholder="..." value="" />
+          </mat-form-field>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="insertTask(input)"
+            class="btn"
+          >
+            Add
+          </button>
+        </div>
+        <div class="task-list" *ngFor="let task of taskList">
+          <app-task [task]="task" (newState)="onNewState($event)"></app-task>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Active">
+    <div class="tab">
+      <div class="tab-center">
+        <div class="task-bar">
+          <mat-form-field>
+            <mat-label>Task</mat-label>
+            <input matInput #input placeholder="..." value="" />
+          </mat-form-field>
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="insertTask(input)"
+            class="btn"
+          >
+            Add
+          </button>
+        </div>
+
+        <div class="task-list" *ngFor="let task of taskList">
+          <app-task
+            [task]="task"
+            (newState)="onNewState($event)"
+            *ngIf="task.state != 'complete'"
+          ></app-task>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Completed">
+    <div class="tab">
+      <div class="tab-center">
+        <div class="task-list" *ngFor="let task of taskList">
+          <div class="tasks-completed" *ngIf="task.state != 'active'">
+            <p>{{ task.text }}</p>
+            <span (click)="deleteTask(task.id)">
+              <mat-icon>cancel</mat-icon>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>
